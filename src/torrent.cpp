@@ -2553,6 +2553,7 @@ namespace libtorrent
 			// either the fastresume data was rejected or there are
 			// some files
 			set_state(torrent_status::checking_files);
+			if (should_check_files()) start_checking();
 
 			// start the checking right away (potentially)
 			m_ses.trigger_auto_manage();
